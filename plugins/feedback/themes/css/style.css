@@ -1,0 +1,18 @@
+.feedbackwrap{border:solid 1px #D8DDCA;width:100%;text-align:center;height:450px;background-color:#F8F8F8}
+.feedback{margin:auto;text-align:left}
+.feedback td{
+padding:3px 0px;
+}
+.feedback .fshow{
+font-size:14px;
+}
+.feedback .txt{
+height:20px;line-height:20px;font-size:14px;
+}
+.feedback .mtxt{
+font-size:14px;width:500px;height:120px;
+}
+
+.feedback .title{
+height:20px;line-height:20px;font-size:14px;width:350px;
+}

@@ -1,0 +1,182 @@
+Gart FAQ
+
+-------------------
+·基础篇
+-------------------
+1.使用 http://您的域名/admin/ 进入后台管理。 
+
+2.安装中的网站地址，如果要使用绝对路径，链接要填入如“http://”的前缀。
+
+3.缓存是自动更新的，一般不需要手动另外操作。
+
+4.在网站后台的界面设置中：可以控制浮动登录器的颜色、是否显示。
+
+5.在编辑器中按 Enter键 默认是添加一个段落，如果您需要按下 Enter键 只出现一行，则需要在编辑器中同时按下 Shift 键 + Enter 键。
+
+6.系统每10分种自动保存草稿（或手动保存），您可以通过读取草稿来获取。
+
+7.不输入文章摘要，前台将不会显示出来。
+
+8.php.ini中 short_open_tag 必须设为 On，路径模式和伪静态模式只适用于apache服务器，其他服务器可自行设置。
+
+9.如果把邮件发送方式设置为mail函数，则不需要设置SMTP的服务器、用户名、密码、端口。
+
+10.您可以把一个用户设置为网站编辑的用户组，他无法访问网站后台的重要设置。
+
+11.在网站后台开启伪静态模式，需要将readme目录中.htaccess文件，放置于网站根目录。
+
+12.如果需要放置优酷等视频，请在文章编辑器上点击源码模式，张贴上HTML代码即可。
+
+13.如果您的服务器支持mysqli模块，可以将./config/confg_sys.php中的dbDriver项改为mysqli。
+
+14.如果上传1M以上的图片没有反应，请关闭水印、缩略图功能，或者手动把PHP中的 memory_limit 提高到60M以上。
+
+15.部分浏览器可能不支持flash上传。
+
+16.您可以在后台控制一般用户组发帖是否要审核。
+
+17.简体以外的语言包是机器翻译。
+
+18.验证邮件成功后，如果当前会员是验证会员组别，则会更新为一般会员，其他组别不作更新。
+
+19.首页头条、副头条是一次性设置，无法添加新的或删除已有的。
+
+20.如果不是gbk版本，请不要用Window自带的文本编辑器编辑文件。
+
+21.水印文件位于 .\WskmPHP\config\images\ 目录
+
+-------------------
+·应用篇
+-------------------
+1.文章添加中的分页类型的区别
+分页请点击编辑器上面的“页“图标。 
+动态分页类型适用于需要大量下载时间的图片分页，而静态分页类型一次性下载。
+
+2.关于生成HTML文件的相关问题
+没有生成的页面，浏览后将自动生成，每个静态页面默认30分钟后更新。
+1)./WskmPHP/config/config_wskm.php的cacheHtmlTime项控制更新频率。
+2).后台工具栏的HTML缓存可以对静态文件进行操作，ID段更新默认不超过100个。
+3).如果您发现点击静态页面上的链接总是跳转到首页或提示无控制器，清空浏览器缓存后重试。
+4).如果您更改了路径模式再静态化，请先清空HTML文件后刷新浏览器。
+
+3.调用广告代码的方式
+1).脚本调用
+<script type="text/javascript" language="javascript" src="{ART_URL}ad.php?id=1" ></script>
+其中id=1，1表示广告ID。
+2).模板标签调用
+{wskm(ad,1,wskm)}	获得广告ID为1的代码，不导入模板函数且不缓存广告代码。
+{wskm(ad,1|2,wskm)}	获得广告类型ID为1的2条代码。
+
+
+
+---------------------
+·开发篇
+---------------------
+1.如何添加模板风格
+前台模板要求宽松，请参考已有模板风格创建，最少需要一个目录和cover.jpg封面图片文件。
+后台模板建议您先复制已有while模板，在此基础上模仿更改。
+
+
+2.修改邮件模板页面
+文件位于：WskmPHP\plugins\phpmailer\html\目录中。
+
+
+3.如何自定义语言包
+语言相关目录为：
+languages\
+WskmPHP\language\
+WskmPHP\plugins\phpmailer\language\
+install\languages\
+install\inc_lang.php
+其他还需更改编辑器的语言：/includes/editor/
+
+4.模板函数介绍
+位于模板中 inc 目录，如果您想使用 wskm 模板标签时获得相应的函数，请在 using.php 文件中添加要导入的函数文件。
+
+5.模板标签
+·常用变量处理
+{$test | urlencode}     编码 URL 字符串
+{$test|escape}          编码 HTML 字符串
+{$test|cut:2:~}         截断变量为2个长度，多出的字符以~替换
+{$test | cut:4}         截断不替换。
+{$time |time}           输出为系统默认时间格式
+{$time|date:Y:m:d}	输出为 2010:09:11 的时间格式
+{$time|time:Y年m月d日}   输出为 2010年09月11日 的时间格式
+{$test |html}           把文章数据转换为html，如：换行符号转为<br />
+{$test|strip}           把数据中的所有标签(如<p>...</p>)删除。
+
+·wskm标签
+{wskm(test)} 模板标签，表示获取 fun_wskm 文件（includes/fun_wskm.php）中的方法 wskm_test 返回的数据，在后台每编辑一次文章，标签内容就会重新获取一次（除了 wskm(newlist) 标签）。
+您可以通过$wskm_test变量（自动添加$wskm_的变量前缀）来获得此方法返回的数据，如：{$wskm_test}。
+
+内置wskm标签介绍：
+{wskm(cate)}		获得所有分类数据
+{wskm(cate,1)}		获得分类ID为1的包含自身及其所有的子分类数据
+{wskm(new,1)}		获得文章ID为1的完整数据
+{wskm(newlist,3)}	获得分类ID为3里面的所有分章，通过{$wskm_newlist.htmlpage}获取其分页。
+{wskm(newlist)}		获得所有分章
+{wskm(newlist,1|5|0|0)}	获得分类ID为1里面的所有分章，一页显示5条数据，通过时间及反序排列，这种方式必须提供4个参数。
+			其中第3个参数，选项为：0表示时间，1表示点击率，2表示回帖率。
+			其中第4个参数，选项为：0表示倒序，1表示正序。
+{wskm(ad,1)}		获得广告ID为1的广告代码
+{wskm(ad,1|3)}		获得广告类型ID为1的3条广告代码
+{wskm(ad,1,none)}	不缓存广告的代码
+{wskm(ad,1,wskm)}	获得ID为1的代码，不导入模板函数且不缓存广告代码。
+
+
+示例：
+{wskm(cate,2)}
+{loop $wskm_cate $tempi}
+	<li><a href="{$tempi.mvcurl}"  target="_blank" >{$tempi.name}</a></li>
+{/loop}
+
+{wskm(new,1)}
+{$wskm_new.title}<img src="{$wskm_new.cover}" />
+
+{wskm(newlist,1|2|1|1)}
+{loop $wskm_newlist.list $tempi}
+<li><a href="{$tempi.mvcurl}"  target="_blank" >{$tempi.title}</a></li>
+{/loop}
+{$wskm_newlist.htmlpage}
+
+·insert 标签
+把函数返回的数据静态化，以后不再编译。
+用法类似于 wskm模板标签，但第3个参数是指定模板函数文件。
+如：
+	{insert(hello,2,test)}
+	第一个参数：hello，表示函数的名称（wskm_hello）。
+	第二个参数：2，表示给函数传递的参数。
+	第三个参数：test，表示导入inc目录中的函数文件 test.php ，如果不提供则使用已有函数。
+
+·sql标签
+{sql( SQL语句 | 赋值变量 | 过期时间 | 额外参数 )}
+sql 模板标签，用来SQL语句的查询，查询的数据将缓存下来，一般用于从数据库中查询较大较耗时的数据。
+其中前两个参数“SQL语句”和“赋值变量”必须提供。
+如果拥有数据库表的创建权限，可以将WskmPHP/config_wskm.php中的cachePlusTableNameGrade配置项设为 1 。
+
+示例：
+	{sql(SELECT title,aid FROM @@articles | test )}
+	该示例表示：查询articles表中包含title和aid字段的所有数据，获取的数据将存储于 $sqldata_test 变量中，您可以通过 {$sqldata_test} 标签来获取。
+
+注意：
+	1.@@ 指表的前缀。
+	2.返回的数据存储于 $sqldata_test 中（默认添加 “$sqldata_”变量前缀 ） 
+	3.如果您查询的只有一个字段，那么这个 $sqldata_test 数组变量返回的数组形式是：array(0=>'data') ，而不是 array(0=>array('title'=>'data')) 。
+
+
+系统默认有对“SQL语句”处理的逻辑，如果您希望自定义处理返回的数据，则需要添加一个 sqldata_test 自定义函数（默认sqldata_前缀），该函数至少提供两个参数。
+如：
+	function sqldata_test($sql,$args=''){
+		......
+	}
+
+
+sql 模板标签，内容只在缓存时间过期后才会更新，您可以控制他的过期时间来控制更新频率。
+如：
+	{sql(SELECT title,aid FROM @@articles | test | 3600 )}		3600秒之后使数据过期
+	{sql(SELECT title,aid FROM @@articles | test | 0 )}		0或空 则使用系统默认的时间过期数据
+	{sql(SELECT title,aid FROM @@articles | test | -1 )}		时间设为 -1 ，则每次重新获取数据。
+	{sql(SELECT title,aid FROM @@articles | test | | 123456 )}	提供一个值为 123456 的额外参数，如果设置了自定义函数将传递过去。
+
+
+

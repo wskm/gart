@@ -1,0 +1,55 @@
+/* common */
+*{ word-wrap:break-word; }
+body{ padding:0;margin-top:5px; background:#FFF; text-align:center; }
+body, td, input, textarea, select, button{ color:#3E3E3E; font:12px Verdana, Tahoma, Arial, sans-serif; }
+ul, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset { margin:0; padding:0; }
+li{list-style :none}
+h1, h2, h3, h4, h5, h6{ font-size:12px; }
+a{ color:#DA6666; text-decoration:none; }
+a:hover { text-decoration:underline; }
+a img{ border:none; }
+em, cite, strong, th{ font-style:normal; font-weight:normal; }
+table{ border-collapse:collapse; }
+
+p{height:25px;line-height:25px;}
+
+.mt10{margin-top:10px}
+.marginbox{margin:5px 20px 5px 50px;}
+.right{ background:url(images/icon.gif) no-repeat 25px 0;  }
+.error{ background:url(images/icon.gif) no-repeat 25px -22px; }
+.b{font-weight:bold;}
+.red{ color:red; }
+
+/* box */
+.wrap{ overflow:hidden; margin:0 auto; width:680px; height:auto !important;text-align:left; border:1px solid #DCDCDC;background-color:#FEFEFE }
+.header{ height:68px;background-color:#FCFCFC ;/*background:url(images/top.gif)*/ }
+	.header h1{  height:50px;line-height:50px;margin-left:10px;font-size:18px;color:#555555;fint-weight:bold;}
+	.header span { float: right; padding-right: 10px; }
+.line{height:1px;border-top:solid 1px #E6E6E6;cclear:both;}
+.main{ padding:20px 20px 0; }
+	.main h3{ margin:10px auto; width:75%; color:#6CA1B4; font-weight:700; }
+
+.title{font-size:12px; margin-left:50px;margin-top:10px;color:#536189}
+
+	.box th{ padding:5px 40px 5px 20px; color:#85A6D2; font-weight:700; }
+	.box td{ padding:5px 40px 5px 20px; }
+	.ebox td{ padding:5px 10px 5px 20px; }
+	
+.center{ text-align:center; }
+.clear{clear:both;height:1px;margin:0;padding:0;}
+.btn{ margin-top:10px; }
+.txt{ width:210px; }
+
+.err ul{width:100%;margin-top:15px;}
+.err li{color:red;margin-left:100px;margin-top:8px;list-style-type:none; clear:both;}
+
+.licensewrap{ margin-bottom:20px; padding:6px; height:300px; border:1px solid #EEE; background:#FFF; overflow:auto; overflow-x:hidden; }
+.license h1{ padding-bottom:10px; font-size:14px; text-align:center; }
+.license h3{ margin:0; color:#666; }
+.license p{ line-height:150%; margin:10px 0; text-indent:22px; }
+.license li{ line-height:150%; margin:5px 0; }
+
+#alertwin { border: 1px solid #DFDFDF; width: 98%; padding: 4px; height: 300px;overflow: auto;text-align: left; background-color:#FFF}
+
+.tourl li{line-height:20px; margin:5px 0;list-style-type:circle}
+.footer{ line-height:38px; text-align:center; font-size:12px; margin-top:20px;}

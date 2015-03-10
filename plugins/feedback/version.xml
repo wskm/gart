@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<title><![CDATA[意见反馈]]></title>
+	<version><![CDATA[1.0]]></version>
+	<copyright><![CDATA[Gart]]></copyright>
+	<description><![CDATA[]]></description>
+	<ismanage><![CDATA[1]]></ismanage>
+	<isnav><![CDATA[1]]></isnav>
+	<hook>
+		<navname><![CDATA[意见反馈]]></navname>
+		<navurl><![CDATA[feedback.php]]></navurl>
+	</hook>
+</root>

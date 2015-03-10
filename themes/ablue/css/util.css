@@ -1,0 +1,28 @@
+#navIND{height:32px;}
+.navIND,.navINDL,.navINDR{background:url(../images/nav-bg.png);}
+.navINDL,.navINDR{width:3px;height:32px;}
+.navINDL{ background-position:0 0;_margin-right:-3px;}
+.navINDR{ background-position:0 -70px;_margin-left:-3px;}
+.navIND{ background-position:0 -35px;height:32px;overflow:hidden;}
+.navIND ul{font-size:14px;padding-left:10px;}
+.navIND li,.navIND li a{background:url(../images/nav-cur.png) 999em 999em no-repeat;}
+.navIND li{margin:5px 0 0 0;float:left;padding-left:2px;}
+.navIND li a{float:left;color:#ffffff;padding:0 10px;height:27px;line-height:25px;outline:none;/*font-weight:700;text-shadow:1px 1px 0px #000;*/}
+.navIND font{font-size:14px;}
+.navIND li a:hover{text-decoration:none;color:#FEFFAA;}
+.navIND .current,.navIND .current:hover{background-position:left top;line-height:33px;height:33px;margin:2px 5px 0;}
+.navIND .current a,.navIND .current:hover a,.navIND .current a:hover{background-position:right top;color:#000000;display:inline;line-height:33px;height:33px;padding:0 19px 0 17px; text-decoration:none;text-shadow:none;}
+.navIND li:hover{ background-position:0 -40px;}
+.navIND li:hover a{background-position:right -40px;}
+
+.navBottom{
+height:22px;line-height:22px;clear:both;text-align:left;margin-top:3px ;
+padding:0 6px;
+text-align:left;
+width:950px;
+color:#DDD;
+overflow:hidden 
+}
+.navBottom a{color:#666666;}
+
+.box .bHead strong,span.mark,.abtn button {color:#2D5FB1}

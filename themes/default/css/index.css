@@ -1,0 +1,39 @@
+.lwrap720{width:720px;float:left;}
+.rwrap320{float:right;width:320px;}
+.h235{height:235px;overflow:hidden}
+.titleiD{height:24px;line-height:24px;background:#FFF url(../images/titlei_b.gif) 0 no-repeat;}
+.titleiD span.mark{margin-left:22px;}
+.contentdiv{padding:9px 0 9px 8px;}
+.slidebox{position:relative;height:200px;border:solid 1px #F1F1F1}
+.slidebox .contentdiv{ display:none;padding:0;}
+.slidebox .pagination{height:16px;clear:both;position:absolute;bottom:5px;right:6px;}
+.slidebox .pagination .sLineTab{width:100%;display:none;}
+.slidebox .pagination .sPageTab{float:right}
+.slidebox .pagination a{width:auto;display:inline;float:left;border:none;color:#FFF;background:#000;text-align:center;padding:2px 5px 0px 5px;line-height:14px;text-decoration:none; font-weight:bold;opacity: 0.7; filter: alpha(opacity=70);}
+.slidebox .pagination a:hover,.slidebox .pagination a.selected{color:#FFF;background:#CC0000;}
+.slidebox .spic{ width:318px; height:200px; }
+.slidebox .stitle{ position:absolute;top:0;left:0;font-weight:bold;font-size:12px;height:20px;line-height:20px;text-align:left; width:318px;color:#FFF;opacity: 0.7; filter: alpha(opacity=70);background:none repeat scroll 0 0 #000000;z-index:10;overflow:hidden;padding:0;margin:0}
+.indexsreach{padding:0px;color:#777;}
+.indexsreach .tinput {width:160px; float:left;border:1px solid #C0C0C0;color:#000000;font:14px Arial;height:18px;margin:0;padding:2px 0 0 0;}
+.indexsreach .tselect{height:20px;width:50px;}
+.home .left320 .txtTitle img {float:left;margin-right:10px;background:#FFFFFF none repeat scroll 0 0;border:1px solid #E4E4E4;display:block;padding:2px;vertical-align:middle;}
+.home .center390 .FocusTxt{height:478px;border:1px #E4E4E4 solid;padding-top:5px;overflow :hidden}
+.home .center390 .FocusTxt .txtTitle{margin:0 10px;}
+.home .center390 .FocusTxt .noneBg{background:none;}
+.home .center390 .FocusTxt .txtTitle .txtMark{float:left;width:14px;font-weight:bold;line-height:14px;padding-top:5px;background:url(../images/txtrbg.gif) right center no-repeat;padding-right:14px;padding-left:10px;}
+.home .center390 .FocusTxt .txtTitle .txtCont{line-height:24px;padding-top:10px;float:left;}
+.friendlink{
+border:solid 1px #DBDBDB;margin:auto;margin-top:10px;width:100%;background-color:#FAFAFA;float:left;
+}
+.friendlink ul{float:left;padding:10px 10px}
+.friendlink li{float:left;height:25px;line-height:25px;margin-right:5px;margin-top:5px;margin-left:5px;white-space:nowrap;width:80px;overflow: hidden;}
+
+
+.user_r{}
+.user_r td{padding:2px 2px;}
+.user_r img  {
+background:none repeat scroll 0 0 #FFFFFF;
+border:1px solid #E2E2E2;
+margin:0 8px;
+padding:2px;
+}
